@@ -1,0 +1,28 @@
+# Build Folders
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+
+# VS Code
+.vscode/
+
+# NuGet
+*.nupkg
+# If you have packages folders uncomment
+#packages/
+
+# Logs
+*.log
+
+# OS files
+Thumbs.db
+.DS_Store
