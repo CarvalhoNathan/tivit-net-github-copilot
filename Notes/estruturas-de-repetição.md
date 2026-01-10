@@ -1,58 +1,83 @@
-// Estruturas de Repetição:
+# 🔄 Estruturas de Repetição (Loops)
 
-// Introdução ao FOR:
+As estruturas de repetição permitem executar o mesmo bloco de código várias vezes até que uma condição seja atendida.
 
-// O FOR exije 3 condições:
-// 1 - Inicialização de uma variável de controle (contador)
-// 2 - Condição de continuação (enquanto essa condição for verdadeira, o loop continua)
-// 3 - Incremento ou decremento da variável de controle
+---
 
-// int numero = 5;
+## 🔁 Laço FOR
 
-// for(int contador = 0; contador <= 10; contador++)
-// {
-//     Console.WriteLine($"{numero} x {contador} = {numero * contador}");
-// }
+O `for` é utilizado quando sabemos exatamente quantas vezes o código deve ser executado. Ele exige três condições:
 
-// ----------------------------------------------------------------------
+1. **Inicialização:** Variável de controle (contador).
+2. **Condição:** Enquanto for verdadeira, o loop continua.
+3. **Passo:** Incremento ou decremento da variável.
 
-// Introdução ao WHILE:
+```csharp
+int numero = 5;
 
-// int numero = 5;
-// int contador = 1;
+for(int contador = 0; contador <= 10; contador++)
+{
+    Console.WriteLine($"{numero} x {contador} = {numero * contador}");
+}
 
-// while (contador <= 10)
-// {
-//     Console.WriteLine($"{contador} Execução: {numero} x {contador} = {numero * contador}");
-//     contador++;
+```
 
-//     if (contador == 6)
-//     {
-//         break;
-//     }
-// }
+*Ideal para tabuadas e percorrer arrays!* 🔢
 
-// ----------------------------------------------------------------------
+---
 
-// Introdução ao DO WHILE:
+## 🔄 Laço WHILE
 
-// int soma = 0, numero = 0;
+O `while` (enquanto) é usado quando não sabemos o número exato de repetições, mas temos uma condição de parada.
 
-// do
-// {
-//     Console.WriteLine("Digite um número: (0 para sair)");
-//     numero = Convert.ToInt32(Console.ReadLine());
+```csharp
+int numero = 5;
+int contador = 1;
 
-//     soma += numero;
+while (contador <= 10)
+{
+    Console.WriteLine($"{contador} Execução: {numero} x {contador} = {numero * contador}");
+    contador++;
 
-// } while (numero != 0);
+    // Exemplo de interrupção forçada com break
+    if (contador == 6)
+    {
+        break; 🛑 // Para o loop imediatamente
+    }
+}
 
-// Console.WriteLine($"A soma dos números digitados é: {soma}");
+```
 
-// ----------------------------------------------------------------------
+---
 
-// Construção menu interativo:
+## 🔁 Laço DO WHILE
 
+Diferente do `while`, o `do while` garante que o bloco de código seja executado **pelo menos uma vez**, pois a condição só é verificada ao final.
+
+```csharp
+int soma = 0, numero = 0;
+
+do
+{
+    Console.WriteLine("Digite um número: (0 para sair)");
+    numero = Convert.ToInt32(Console.ReadLine());
+    soma += numero;
+
+} while (numero != 0);
+
+Console.WriteLine($"A soma dos números digitados é: {soma}");
+
+```
+
+*Útil para entradas de dados onde o usuário decide quando parar.* 📥
+
+---
+
+## 📱 Exemplo Prático: Menu Interativo
+
+Combinando `while`, `switch` e variáveis de controle para criar um sistema funcional:
+
+```csharp
 string opcao;
 bool exibirMenu = true;
 
@@ -80,13 +105,14 @@ while (exibirMenu)
             break;
         case "4":
             Console.WriteLine("Saindo...");
-            exibirMenu = false;
-            // Environment.Exit(0); outra opção de sair do programa
+            exibirMenu = false; // Para o loop
+            // Environment.Exit(0); -> Fecha o programa inteiro
             break;
         default:
             Console.WriteLine("Opção inválida. Tente novamente.");
             break;
     }
 }
-
 Console.WriteLine("Programa finalizado.");
+
+```
