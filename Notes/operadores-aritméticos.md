@@ -1,50 +1,77 @@
-// Operadores Aritméticos: +, -, *, /, %
+# 🧮 Operadores Aritméticos e Classe Math
 
-// + para adiçõo (x + y)
-// - para subtração (x - y)
-// * para multiplicação (x * y)
-// / para divisão (x / y)
-// % para resto da divisão (x % y)
-// + + para incrementar o valor de uma variável (x++)
-// - - para decrementar o valor de uma variável (x--)
+Os operadores aritméticos são a base para qualquer cálculo dentro de um sistema. No .NET, também utilizamos bibliotecas prontas para operações complexas.
 
+## ➕ Operações Básicas
+
+| Operador | Operação | Exemplo |
+| --- | --- | --- |
+| `+` | Adição | `x + y` |
+| `-` | Subtração | `x - y` |
+| `*` | Multiplicação | `x * y` |
+| `/` | Divisão | `x / y` |
+| `%` | Resto da Divisão (Módulo) | `x % y` |
+
+```csharp
 Calculadora calc = new Calculadora();
 
-// Operações básicas da matemática:
+calc.Somar(10, 30);      // 40
+calc.Subtrair(10, 50);   // -40
+calc.Multiplicar(15, 45); // 675
+calc.Dividir(2, 2);      // 1
 
-// calc.Somar(10, 30);
-// calc.Subtrair(10, 50);
-// calc.Multiplicar(15, 45);
-// calc.Dividir(2, 2);
+```
 
-// ----------------------------------------------------------------------
-// Operação de potência:
+---
 
-// calc.Potencia(3, 3);
+## 📈 Incremento e Decremento
 
-// Operações trigonométricas:
+Usados frequentemente em laços de repetição para aumentar ou diminuir o valor de uma variável em 1 unidade.
 
-// calc.Seno(30);
-// calc.Conseno(30);
-// calc.Tangente(30);
+* **Incremento (`++`):** `numero++` é o mesmo que `numero = numero + 1`
+* **Decremento (`--`):** `numero--` é o mesmo que `numero = numero - 1`
 
-// Incremento e Decremento:
+```csharp
+int numero = 10;
+numero++; // Agora vale 11 ✨
 
-// int numeroIncremento = 10;
+int outroNumero = 20;
+outroNumero--; // Agora vale 19 📉
 
-// Console.WriteLine(numeroIncremento);
+```
 
-// Console.WriteLine("Incrementando o valor...");
-// numeroIncremento = numeroIncremento + 1;
-// Console.WriteLine(numeroIncremento);
+---
 
-// int numeroDecremento = 20;
-// Console.WriteLine("Decrementando o valor...");
-// numeroDecremento = numeroDecremento - 1;
-// Console.WriteLine(numeroDecremento);
+## 📐 Operações Avançadas (Potência e Trigonometria)
 
-// ----------------------------------------------------------------------
+Para cálculos científicos, o C# utiliza métodos internos. Abaixo, exemplos de como seriam implementados em uma classe `Calculadora`:
 
-// Raiz Quadrada:
+### 🔋 Potência e Raiz
 
-// calc.RaizQuadrada(4);
+* **Potência:** `Math.Pow(base, expoente)`
+* **Raiz Quadrada:** `Math.Sqrt(numero)`
+
+```csharp
+calc.Potencia(3, 3);      // 3³ = 27
+calc.RaizQuadrada(16);    // √16 = 4
+
+```
+
+### 📐 Trigonometria
+
+Utilizada para cálculos de ângulos. **Atenção:** Os métodos de `Math` geralmente trabalham com Radianos, sendo necessário converter graus se necessário.
+
+```csharp
+calc.Seno(30);
+calc.Cosseno(30);
+calc.Tangente(30);
+
+```
+
+---
+
+### ✅ Resumo Visual:
+
+* **Simples:** `+`, `-`, `*`, `/` ✏️
+* **Resto:** `%` (Saber se um número é par ou ímpar) ⚖️
+* **Evolução:** `++` e `--` 🔄
