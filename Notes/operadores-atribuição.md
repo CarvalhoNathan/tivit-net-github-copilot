@@ -1,118 +1,101 @@
-// Convertendo de maneira segura:
+# 🏗️ Manipulação de Dados e Tipos
 
+No C#, entender como os dados se transformam e como as operações são priorizadas é fundamental para evitar erros de lógica.
+
+## 🔄 Conversão de Tipos (Casting)
+
+### 🛡️ Conversão Segura com `TryParse`
+
+Quando não temos certeza se uma `string` pode virar um número (como "15-"), usamos o `TryParse`. Ele tenta converter e, se falhar, não trava o programa, apenas retorna `0` ou `false`.
+
+```csharp
 string a = "15-";
 int b = 0;
-int.TryParse(a, out b);
 
-Console.WriteLine(b);
-Console.WriteLine("Conversão realizada com sucesso!");
+// Tenta converter 'a' e joga o resultado em 'b'
+int.TryParse(a, out b); 
 
-// ---------------------------------------------------------------------
+Console.WriteLine(b); // Resultado: 0 (conversão falhou, b mantém o valor inicial)
 
-// Ordem dos operadores:
+```
 
-// 1º - ( ) --> Parênteses
-// 2º - * / % --> Multiplicação, Divisão e Resto da Divisão
-// 3º - + - --> Adição e Subtração
+### 🆚 `Convert` vs `Parse`
 
-// double a = 4 / 2 + 2;
-// Console.WriteLine(a);
+* **`int.Parse("5")`**: Converte string para inteiro. **Cuidado:** Se o valor for nulo, o programa quebra (Erro). ❌
+* **`Convert.ToInt32(null)`**: Mais robusto. Se o valor for nulo, ele retorna **0** em vez de quebrar o programa. ✅
 
-// ----------------------------------------------------------------------
+### 🧬 Cast Implícito e `ToString()`
 
-// Cast implícito - conversão automática de tipos menores para tipos maiores
+* **Implícito:** O C# converte tipos "menores" para "maiores" automaticamente (ex: `int` para `long` ou `double`), pois não há risco de perda de dados.
+* **ToString:** Transforma qualquer tipo em texto.
+```csharp
+int inteiro = 5;
+string texto = inteiro.ToString(); 
 
-// int a = 5;
-// double b = a;
+```
 
-// int a = 5;
-// long b = a;
 
-// int a = int.MaxValue;
-// long b = a;
 
-// Console.WriteLine(b);
+---
 
-// ----------------------------------------------------------------------
+## 🧮 Ordem de Precedência
 
-// Quando quiser converter um valor em string, posso usar o método ToString().
+O C# segue a regra matemática para calcular expressões:
 
-// int inteiro = 5;
-// string a = inteiro.ToString();
+1. **`( )`** : Parênteses primeiro.
+2. **`* / %`** : Multiplicação, Divisão e Resto.
+3. **`+ -`** : Adição e Subtração.
 
-// Console.WriteLine(a);
+---
 
-// ----------------------------------------------------------------------
+## 📉 Operadores de Atribuição Combinada
 
-// int a = Convert.ToInt32(null);
-// int a = int.Parse("5");
+Forma reduzida de atualizar o valor de uma variável usando o valor atual dela:
 
-// O Convert ainda aceita valores nulos, diferente do Parse que não aceita valores nulos.
+```csharp
+int c = 30;
+c += 5; // Mesma coisa que: c = c + 5 (Resultado: 35)
+c -= 5; // Subtrai do valor atual
+c *= 2; // Multiplica o valor atual
 
-// Console.WriteLine(a);
+```
 
-// ---------------------------------------------------------------------
+---
 
-// int a = 10;
-// int b = 20;
+## 📅 Trabalhando com Datas (`DateTime`)
 
-// int c = a + b;
+O tipo `DateTime` é usado para manipular horários e calendários.
 
-// c = c + 5;
-// Se eu deixasse apenas 5, ele excluiria o valor antigo que daria 30 e ficando apenas 5.
+```csharp
+// Pega a data de agora e adiciona 5 dias
+DateTime dataAtual = DateTime.Now.AddDays(5);
 
-// c += 5;
-// Essa é a forma reduzida de fazer o que está na linha acima.
-// c -= 5; // Subtrai 5 do valor atual de c
-// c *= 5; // Multiplica o valor atual de c por 5
-// c /= 5; // Divide o valor atual de c por 5
+// Formata a exibição: dd (dia), MM (mês), yyyy (ano)
+Console.WriteLine(dataAtual.ToString("dd/MM/yyyy")); 
 
-// Console.WriteLine(c);
+```
 
-// ----------------------------------------------------------------------
+---
 
-// DateTime:
+## 📝 Variáveis e Tipos Básicos
 
-// DateTime dataAtual = DateTime.Now.AddDays(5);
-// Console.WriteLine(dataAtual.ToString("dd/MM/yyyy"));
+* **`string`**: Textos.
+* **`int`**: Números inteiros.
+* **`double` / `decimal`**: Números com vírgula. (Dica: Use `decimal` com o sufixo `M` para dinheiro 💰).
+* **`bool`**: Verdadeiro ou Falso.
 
-// ----------------------------------------------------------------------
+> **⚠️ Regra de Variável:** O único caractere especial permitido no nome de uma variável é o `_` (underline). Sempre use **camelCase** para nomeá-las!
 
-// string apresentacao = "Olá, seja bem vindo";
+---
 
-// int quantidade = 1;
-// Console.WriteLine("Valor da variável quantidade: " + quantidade);
-// Aqui ele mantém o valor antigo da variável quantidade
+## 👥 Instanciando uma Classe
 
-// quantidade = 10;
-// Console.WriteLine("Valor da variável quantidade: " + quantidade);
-// Aqui ele altera o valor da variável quantidade
+Para usar as definições que criamos em uma classe, precisamos "instanciar" o objeto:
 
-// int quantidade = 1;
-// quantidade = 10;
-// Console.WriteLine("Valor da variável quantidade: " + quantidade);
-// Aqui ele altera o valor da variável quantidade, porém a variável quantidade foi declarada apenas uma vez.
+```csharp
+Pessoa p = new Pessoa(); // Criando o objeto
+p.Nome = "Nathan";
+p.Idade = 23;
+p.Apresentar();
 
-// ----------------------------------------------------------------------
-
-// double altura = 1.80;
-// decimal preco = 1.80M;
-// bool condicao = true;
-
-// Console.WriteLine(apresentacao);
-// Console.WriteLine("Valor da variável quantidade: " + quantidade);
-// Console.WriteLine("Valor da variável altura: " + altura.ToString("0.00"));
-// Console.WriteLine("Valor da variável preco: " + preco);
-// Console.WriteLine("Valor da variável condicao: " + condicao);
-
-// ----------------------------------------------------------------------
-
-// Pessoa p = new Pessoa();
-
-// p.Nome = "Nathan";
-// p.Idade = 23;
-// p.Apresentar();
-
-// Pessoa pessoaFisica = new Pessoa();
-// Exempelo de camelCase em variável
-// Único caracter especial permitido em variável é o _ (underline)
+```
