@@ -8,9 +8,9 @@ namespace tivit_net_github_copilot.Models
     public class Pessoa
     {
         // Logo abaixo estão os atributos da classe Pessoa:
-        public string Nome { get; set; }
+        public string? Nome { get; set; }
         public int Idade { get; set; }
-        public string NomeRepresentanteLegalDaPessoaFisica { get; set; }
+        public string? NomeRepresentanteLegalDaPessoaFisica { get; set; }
 
         // Método Apresentar:
         public void Apresentar()
