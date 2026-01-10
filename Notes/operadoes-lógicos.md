@@ -1,48 +1,81 @@
-// Operadores Lógicos
-// Operador OR na prática:
+# 🧠 Operadores Lógicos
 
-// bool MaiorDeIdade = true;
-// bool possuiAutorizacaoDoResponsavel = false;
+Os operadores lógicos são usados para combinar ou inverter condições booleanas (`true` ou `false`). Eles são o cérebro por trás das tomadas de decisão no código.
 
-// if (MaiorDeIdade || possuiAutorizacaoDoResponsavel)
-// {
-//     Console.WriteLine("Entrada permitida!");
-// }
-// else
-// {
-//     Console.WriteLine("Entrada não permitida!");
-// }
+---
 
-// ----------------------------------------------------------------------
+## ⚖️ Operador OR (OU) -> `||`
 
-// Operador AND na prática:
+O operador **OR** retorna verdadeiro se **pelo menos uma** das condições for verdadeira. Basta que um lado seja `true` para que o bloco seja executado.
 
-// bool possuiPresencaMinima = true;
-// double media = 7.5;
+```csharp
+bool maiorDeIdade = true;
+bool possuiAutorizacao = false;
 
-// if (possuiPresencaMinima && media >= 7)
-// {
-//     Console.WriteLine("Aprovado!");
-// }
-// else
-// {
-//     Console.WriteLine("Reprovado!");
-// }
-
-// ----------------------------------------------------------------------
-
-// Operador NOT na prática:
-// Quando está com sinal de exclamação antes da variável, ele inverte o valor lógico dela. Então ele sempre vai esperar false para entrar no if.
-// Exemplo: choveu = false, então realmente não choveu, o que faz com que a condição do if seja verdadeira (vou pedalar). Caso estivesse chovendo (choveu = true), a condição do if seria falsa, e iria para o else (vou pedalar outro dia).
-
-bool choveu = false;
-bool estaTarde = false;
-
-if (!choveu && !estaTarde)
+// Se for maior de idade OU tiver autorização, entra.
+if (maiorDeIdade || possuiAutorizacao)
 {
-    Console.WriteLine("Vou pedalar!");
+    Console.WriteLine("Entrada permitida! ✅");
 }
 else
 {
-    Console.WriteLine("Vou pedelar outro dia!");
+    Console.WriteLine("Entrada não permitida! ❌");
 }
+
+```
+
+---
+
+## 🔗 Operador AND (E) -> `&&`
+
+O operador **AND** só retorna verdadeiro se **todas** as condições forem verdadeiras simultaneamente.
+
+```csharp
+bool possuiPresencaMinima = true;
+double media = 7.5;
+
+// Só é aprovado se tiver presença mínima E média maior ou igual a 7.
+if (possuiPresencaMinima && media >= 7)
+{
+    Console.WriteLine("Aprovado! 🎉");
+}
+else
+{
+    Console.WriteLine("Reprovado! 📚");
+}
+
+```
+
+---
+
+## 🔄 Operador NOT (NÃO / Inversão) -> `!`
+
+O operador **NOT** inverte o valor lógico. Se algo é `false`, `!algo` se torna `true`. Ele é usado para verificar se uma condição **não** foi atendida.
+
+> **Regra de ouro:** O `!` transforma o falso em verdadeiro e o verdadeiro em falso. No exemplo abaixo, o `if` só executa se **não** estiver chovendo e **não** estiver tarde.
+
+```csharp
+bool choveu = false;
+bool estaTarde = false;
+
+// "Se NÃO choveu E NÃO está tarde"
+if (!choveu && !estaTarde)
+{
+    Console.WriteLine("Vou pedalar! 🚲");
+}
+else
+{
+    Console.WriteLine("Vou pedalar outro dia! 🏠");
+}
+
+```
+
+---
+
+### 📝 Resumo Rápido
+
+* `||` (OR): Pelo menos um é verdade. 🟢
+* `&&` (AND): Todos devem ser verdade. ⛓️
+* `!` (NOT): Inverte o estado atual. 🔄
+
+---
