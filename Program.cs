@@ -1,2 +1,37 @@
-﻿using System;
-using tivit_net_github_copilot.Models;
+﻿int[] arrayInteiros = new int[3];
+
+arrayInteiros[0] = 72;
+arrayInteiros[1] = 64;
+arrayInteiros[2] = 50;
+// arrayInteiros[3] = 10; Essa linha vai gerar um erro de índice fora dos limites do array
+
+Console.WriteLine("--------------------------------");
+Console.WriteLine("Percorrendo um array com FOR\n");
+
+// Vantagem: Temos acesso ao índice do array
+
+for (int contador = 0; contador < arrayInteiros.Length; contador++)
+{
+    Console.WriteLine($"Posição N° {contador} - Valor: {arrayInteiros[contador]}");
+}
+
+Console.WriteLine("--------------------------------");
+Console.WriteLine("Percorrendo um array com FOREACH\n");
+
+// Desvantagem: Não temos acesso ao índice do array
+
+foreach (int valor in arrayInteiros)
+{
+    Console.WriteLine($"Valor do array: {valor}");
+}
+
+Console.WriteLine("--------------------------------");
+
+// Solução para ter o índice ao usar o FOREACH
+
+int contadorForeach = 0;
+foreach (int valor in arrayInteiros)
+{
+    Console.WriteLine($"Posição N° {contadorForeach} - Valor: {valor}");
+    contadorForeach++;
+}
