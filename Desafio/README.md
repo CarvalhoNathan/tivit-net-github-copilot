@@ -1,38 +1,67 @@
-# DIO - Trilha .NET - Fundamentos
-www.dio.me
+# 🚗 DIO - Trilha .NET - Fundamentos: Sistema de Estacionamento
 
-## Desafio de projeto
-Para este desafio, você precisará usar seus conhecimentos adquiridos no módulo de fundamentos, da trilha .NET da DIO.
+Este repositório contém a resolução do desafio de projeto do módulo de Fundamentos da **DIO (Digital Innovation One)**. O objetivo é aplicar os conceitos de C# e .NET para gerenciar o fluxo de um estacionamento.
 
-## Contexto
-Você foi contratado para construir um sistema para um estacionamento, que será usado para gerenciar os veículos estacionados e realizar suas operações, como por exemplo adicionar um veículo, remover um veículo (e exibir o valor cobrado durante o período) e listar os veículos.
-
-## Proposta
-Você precisará construir uma classe chamada "Estacionamento", conforme o diagrama abaixo:
 ![Diagrama de classe estacionamento](diagrama_classe_estacionamento.png)
 
-A classe contém três variáveis, sendo:
+## 🎯 Objetivo do Projeto
 
-**precoInicial**: Tipo decimal. É o preço cobrado para deixar seu veículo estacionado.
+Desenvolver um sistema robusto para gerenciamento de veículos, capaz de realizar operações de entrada, saída (com cálculo de taxas) e listagem de frota.
 
-**precoPorHora**: Tipo decimal. É o preço por hora que o veículo permanecer estacionado.
+---
 
-**veiculos**: É uma lista de string, representando uma coleção de veículos estacionados. Contém apenas a placa do veículo.
+## 🏗️ Modelagem do Sistema
 
-A classe contém três métodos, sendo:
+A estrutura principal baseia-se na classe `Estacionamento`, conforme o diagrama abaixo:
 
-**AdicionarVeiculo**: Método responsável por receber uma placa digitada pelo usuário e guardar na variável **veiculos**.
+### 📊 Atributos (Estado)
 
-**RemoverVeiculo**: Método responsável por verificar se um determinado veículo está estacionado, e caso positivo, irá pedir a quantidade de horas que ele permaneceu no estacionamento. Após isso, realiza o seguinte cálculo: **precoInicial** * **precoPorHora**, exibindo para o usuário.
+* **`precoInicial`**: Valor fixo cobrado apenas por entrar no estacionamento. 💰
+* **`precoPorHora`**: Valor variável cobrado por cada hora de permanência. ⏱️
+* **`veiculos`**: Uma `List<string>` que armazena as placas dos veículos atualmente estacionados. 📋
 
-**ListarVeiculos**: Lista todos os veículos presentes atualmente no estacionamento. Caso não haja nenhum, exibir a mensagem "Não há veículos estacionados".
+### ⚙️ Métodos (Comportamento)
 
-Por último, deverá ser feito um menu interativo com as seguintes ações implementadas:
-1. Cadastrar veículo
-2. Remover veículo
-3. Listar veículos
-4. Encerrar
+1. **`AdicionarVeiculo`**: Solicita a placa ao usuário e a armazena na lista. ➕
+2. **`RemoverVeiculo`**:
+* Verifica se a placa informada existe na lista.
+* Solicita a quantidade de horas permanecidas.
+* Realiza o cálculo: `$precoInicial + (precoPorHora * horas)$`.
+* Remove o veículo da lista e exibe o valor final ao cliente. ➖
 
 
-## Solução
-O código está pela metade, e você deverá dar continuidade obedecendo as regras descritas acima, para que no final, tenhamos um programa funcional. Procure pela palavra comentada "TODO" no código, em seguida, implemente conforme as regras acima.
+3. **`ListarVeiculos`**: Exibe todos os veículos estacionados. Se a lista estiver vazia, informa que não há veículos. 🔍
+
+---
+
+## 🖥️ Fluxo da Aplicação
+
+O programa conta com um **Menu Interativo** via console que opera em loop até que o usuário decida encerrar:
+
+1. **Cadastrar veículo** 📝
+2. **Remover veículo** 💸
+3. **Listar veículos** 🚗
+4. **Encerrar** 🚪
+
+---
+
+## 🛠️ Instruções para Implementação
+
+O projeto base possui uma estrutura pré-definida com comentários **"TODO"**. Para completar o desafio, siga estas etapas:
+
+1. **Entrada de Dados:** Use `Console.ReadLine()` para capturar placas e tempos.
+2. **Validação:** No método de remoção, utilize `.Any()` ou `.Contains()` para verificar a existência do veículo.
+3. **Cálculo:** Certifique-se de realizar a operação matemática correta para não gerar cobranças indevidas.
+4. **Exibição:** Use Interpolação de Strings (`$""`) para tornar as mensagens ao usuário mais amigáveis.
+
+---
+
+## 🚀 Como Executar
+
+1. Clone este repositório.
+2. Certifique-se de ter o **SDK do .NET 6** (ou superior) instalado.
+3. Navegue até a pasta do projeto e execute:
+```bash
+dotnet run
+
+```
