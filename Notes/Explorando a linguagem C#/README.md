@@ -1,4 +1,4 @@
-# 🎯 Exploração Avançada do C# (.NET)
+# 🎯 Exploração Avançada C# (.NET)
 
 O objetivo principal deste módulo é expandir os horizontes sobre a linguagem C#, saindo do básico e explorando recursos avançados que conferem **robustez**, **performance** e **escalabilidade** às aplicações.
 
@@ -11,7 +11,7 @@ Antes de iniciar esta jornada, é fundamental que você tenha domínio sobre:
 
 ---
 
-## 🗺️ Percurso de Aprendizado
+## 🗺️ Percurso de Aprendizado:
 
 A trilha está dividida em 7 etapas estratégicas para consolidar seu conhecimento como desenvolvedor .NET:
 
