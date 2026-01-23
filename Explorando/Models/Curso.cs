@@ -38,11 +38,28 @@ namespace Explorando.Models
 
         public void ListarAlunos()
         {
+            // O método ListarAlunos está acessando a propriedade Nome da própria classe Curso para exibir o nome do curso.
+            
             Console.WriteLine($"Alunos do curso de: {Nome}");
-            foreach (Pessoa aluno in Alunos)
+
+            for (int count = 0; count < Alunos.Count; count++)
             {
-                Console.WriteLine(aluno.NomeCompleto);
-            }
+                // Concatenção Strings:
+                
+                // string texto = "N° " + count + " - " + Alunos[count].NomeCompleto;
+
+                // Uma das maneiras de concatenar strings é utilizando o sinal de +
+                
+                // --------------------------------------------
+                
+                // Interpolação Strings:
+
+                string texto = $"N° {count + 1} - {Alunos[count].NomeCompleto}";
+
+                // A interpolação de strings é feita utilizando o $ antes das aspas duplas, e também apenas uma vez as aspas duplas no início e no fim da string, contrário da concatenação que utiliza várias aspas duplas e várias vezes o sinal de +.
+
+                Console.WriteLine(texto);
+            };
         }
     }
 }
