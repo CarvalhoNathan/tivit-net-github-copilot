@@ -62,18 +62,18 @@ CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("en-US");
 
 // Console.WriteLine(numero.ToString("##-##-##"));
 
-string dataString = "2026-01-23 18:00";
+// string dataString = "2026-01-23 18:00";
 
-bool sucesso = DateTime.TryParseExact(dataString, "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime data);
+// bool sucesso = DateTime.TryParseExact(dataString, "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime data);
 
-if (sucesso)
-{
-    Console.WriteLine($"Conversão com sucesso: {data}");
-}
-else
-{
-    Console.WriteLine($"{dataString} (não é uma data válida)");
-}
+// if (sucesso)
+// {
+//     Console.WriteLine($"Conversão com sucesso: {data}");
+// }
+// else
+// {
+//     Console.WriteLine($"{dataString} (não é uma data válida)");
+// }
 
 // DateTime data = DateTime.Parse(dataString);
 
