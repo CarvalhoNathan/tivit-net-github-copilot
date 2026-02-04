@@ -12,49 +12,47 @@ Uma **IDE** (*Integrated Development Environment*), ou Ambiente de Desenvolvimen
 
 É a ferramenta "carro-chefe" da Microsoft para o ecossistema .NET.
 
-* **Vantagens:** * Possui versão gratuita (**Community**). 🆓
-* Ferramentas de **Debug** extremamente ricas e detalhadas. 🐞
-* Suporte nativo completo para C#, C++, Python e Node.js.
+#### Vantagens:
+*   Possui versão gratuita (**Community**). 🆓
+*   Ferramentas de **Debug** extremamente ricas e detalhadas. 🐞
+*   Suporte nativo completo para C#, C++, Python e Node.js.
 
+#### Desvantagens:
+*   **Performance:** É um software pesado que exige bastante hardware (RAM/Processamento). 🐢
+*   **Limitação:** Não está disponível para Linux. 🐧
 
-* **Desvantagens:**
-* **Performance:** É um software pesado que exige bastante hardware (RAM/Processamento). 🐢
-* **Limitação:** Não está disponível para Linux. 🐧
-
-
+---
 
 ### 💙 Visual Studio Code (Editor de Texto)
 
 Um editor leve e altamente personalizável que se tornou o favorito de muitos desenvolvedores.
 
-* **Vantagens:**
+#### Vantagens:
 * Totalmente **Gratuito** e **Open Source**. 🔓
 * Ecossistema gigante de **extensões**. 🔌
 * **Multiplataforma:** Roda liso no Windows, Mac e Linux.
 * Extremamente leve e rápido. 🚀
 
-
-* **Desvantagens:**
+#### Desvantagens:
 * Exige configuração inicial (não vem "pronto" para C#). ⚙️
 * Algumas funcionalidades avançadas não são tão intuitivas quanto em uma IDE completa.
 
-
+---
 
 ### 🔴 JetBrains Rider (IDE)
 
 Uma alternativa poderosa e muito utilizada profissionalmente.
 
-* **Vantagens:**
+#### Vantagens:
 * Integração profunda com .NET e suporte excelente para **Unity**. 🎮
 * Sugestões inteligentes de **refatoração** de código. ✨
 * Atalhos que aumentam absurdamente a produtividade. ⚡
 
+---
 
-* **Desvantagens:**
+#### Desvantagens:
 * **Pago:** Exige uma assinatura (embora existam licenças para estudantes). 💳
 * **Performance:** Assim como o Visual Studio, exige recursos consideráveis da máquina.
-
-
 
 ---
 
@@ -62,7 +60,7 @@ Uma alternativa poderosa e muito utilizada profissionalmente.
 
 Para começar a desenvolver, precisamos de dois pilares básicos:
 
-### 1️⃣ Instalação do .NET SDK
+### 1️⃣ Instalação do .NET SDK:
 
 O SDK (Software Development Kit) é o conjunto de ferramentas que permite criar e rodar aplicações .NET.
 
