@@ -19,7 +19,7 @@ A trilha está dividida em 7 etapas estratégicas para consolidar seu conhecimen
 
 Aprofundamento na Programação Orientada a Objetos (POO). Como encapsular dados corretamente e garantir que um objeto seja criado de forma válida desde o primeiro segundo.
 
-### 2. Manipulando Valores ⚙️
+### 2. [Manipulando Valores ⚙️](https://github.com/CarvalhoNathan/tivit-net-github-copilot/tree/main/Manipulando%20valores)
 
 Trabalho com strings, tipos numéricos e, principalmente, a formatação de moedas e datas seguindo padrões internacionais (Globalization).
 
