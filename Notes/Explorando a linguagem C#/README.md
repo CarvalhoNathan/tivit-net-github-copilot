@@ -25,7 +25,7 @@ Trabalho com strings, tipos numéricos e, principalmente, a formatação de moed
 
 ### 3. Exceções e Coleções 🛡️
 
-Como tornar seu código "à prova de falhas" com blocos `try-catch` e o uso de coleções avançadas como `Queue`, `Stack` e `Dictionary`.
+Como tornar seu código "à prova de falhas" com blocos [`try-catch`](https://github.com/CarvalhoNathan/tivit-net-github-copilot/tree/main/Exce%C3%A7%C3%B5es%20e%20Cole%C3%A7%C3%B5es) e o uso de coleções avançadas como [`Queue`, `Stack` e `Dictionary`](https://github.com/CarvalhoNathan/tivit-net-github-copilot/tree/main/Filas%20e%20Pilhas).
 
 ### 4. Tuplas, Operador Ternário e Desconstrução ⚡
 
